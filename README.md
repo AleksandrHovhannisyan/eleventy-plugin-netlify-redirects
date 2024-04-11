@@ -31,7 +31,7 @@ Add `redirectFrom` to the front matter of any input file to specify which URL(s)
 
 For single redirects, `redirectFrom` can be a string:
 
-**src/posts/2024-04-11-my-post-slug.md
+**src/posts/2024-04-11-my-post-slug.md**
 ```md
 ---
 redirectFrom: /old-url/
@@ -40,6 +40,7 @@ redirectFrom: /old-url/
 
 If a page's URL changed multiple times, `redirectFrom` can be an array of strings:
 
+**src/posts/2024-04-11-my-post-slug.md**
 ```md
 ---
 redirectFrom:
@@ -52,7 +53,7 @@ In both cases, the plugin will automatically map the old URLs to the template's 
 
 For example, if the above redirects are specified in a post with a current permalink/URL of `/posts/my-post-slug/`, then you would get the following output:
 
-**<output-folder>/_redirects**
+**/_redirects**
 ```
 /one/   /posts/my-post-slug/
 /two/   /posts/my-post-slug/
@@ -60,14 +61,16 @@ For example, if the above redirects are specified in a post with a current perma
 
 Netlify will detect this file after Eleventy builds your site.
 
+See the [example folder](./example/.eleventy.js) or run `pnpm run test` for more examples.
+
 ## API
 
 The following plugin options are available for use in your `.eleventy.js` configuration:
 
 Option            |Type                       |Description|Example|
 ------------------|---------------------------|-----------|-------|
-`staticRedirects` |`Record<string, string>|undefined`   |(Optional) A hard-coded mapping from old URLs to new URLs. For example, you might want to use this for [Netlify splats](https://docs.netlify.com/routing/redirects/redirect-options/#splats) or any other redirect rules Netlify supports that you cannot implement via the `redirectFrom` front-matter variable.|`{ "/blog/*": "/articles/:splat" }`|
-`frontMatterOverrides`|Record<string, string>|undefined`|(Optional) Any front matter variables you want to set for the redirects file. By default, the plugin will set [`eleventyExcludeFromCollections: true`](https://www.11ty.dev/docs/collections/#how-to-exclude-content-from-collections) as well as `permalink: /_redirects`. These can be overridden too, but it's not recommended.|`{ "customFrontMatter": "value" }`|
+`staticRedirects` |`Record<string, string>\|undefined`   |(Optional) A hard-coded mapping from old URLs to new URLs. For example, you might want to use this for [Netlify splats](https://docs.netlify.com/routing/redirects/redirect-options/#splats) or any other redirect rules Netlify supports that you cannot implement via the `redirectFrom` front-matter variable.|`{ "/blog/*": "/articles/:splat" }`|
+`frontMatterOverrides`|`Record<string, string>\|undefined`|(Optional) Any front matter variables you want to set for the redirects file. By default, the plugin will set [`eleventyExcludeFromCollections: true`](https://www.11ty.dev/docs/collections/#how-to-exclude-content-from-collections) as well as `permalink: /_redirects`. These can be overridden too, but it's not recommended.|`{ "customFrontMatter": "value" }`|
 
 ## Motivation
 
