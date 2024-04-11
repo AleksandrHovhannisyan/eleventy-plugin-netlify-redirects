@@ -20,6 +20,13 @@
     "netlify",
     "redirects"
   ],
+  "files": [
+    "src/index.js",
+    "src/redirects.liquid",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
   "scripts": {
     "clean": "rimraf example/_site",
     "test": "pnpm run clean && cd example && npx @11ty/eleventy --serve --incremental"
