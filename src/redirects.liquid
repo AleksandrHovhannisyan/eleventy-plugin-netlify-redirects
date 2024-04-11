@@ -1,13 +1,15 @@
 {%- comment -%}Static redirects (e.g., splats).{%- endcomment -%}
 {%- if staticRedirects -%}
-{%- for redirectRule in staticRedirects -%}
+# Static/global redirect rules
+{% for redirectRule in staticRedirects -%}
 {%- assign redirectFrom = redirectRule | first -%}
 {%- assign redirectTo = redirectRule | last -%}
 {{ redirectFrom }}  {{ redirectTo }}
 {% endfor -%}
 {%- endif %}
+# Specific redirects
 {%- comment -%}Per-page redirects (e.g., if a page gets indexed but you want to change its URL).{%- endcomment -%}
-{% for page in collections.all %}
+{%- for page in collections.all -%}
     {%- if page.url and page.data.redirectFrom -%}
         {%- comment -%}Array of redirects{%- endcomment -%}
         {%- if page.data.redirectFrom.first -%}
@@ -15,7 +17,7 @@
 {{ oldUrl }}  {{ page.url }}
             {%- endfor -%}
         {%- comment -%}Single redirect (string){%- endcomment -%}
-        {%- else -%}
+        {%- else %}
 {{ page.data.redirectFrom }}  {{ page.url }}
         {%- endif %}
     {%- endif -%}
