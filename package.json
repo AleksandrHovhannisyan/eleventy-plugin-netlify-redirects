@@ -1,8 +1,11 @@
 {
   "name": "eleventy-plugin-netlify-redirects",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "src/index.js",
-  "author": "Aleksandr Hovhannisyan",
+  "author": {
+    "name": "Aleksandr Hovhannisyan",
+    "url": "https://www.aleksandrhovhannisyan.com"
+  },
   "license": "MIT",
   "description": "An Eleventy plugin to generate a Netlify _redirects file for your static site",
   "repository": {
@@ -10,10 +13,6 @@
     "url": "https://github.com/AleksandrHovhannisyan/eleventy-plugin-netlify-redirects.git"
   },
   "homepage": "https://github.com/AleksandrHovhannisyan/eleventy-plugin-netlify-redirects.git",
-  "author": {
-    "name": "Aleksandr Hovhannisyan",
-    "url": "https://www.aleksandrhovhannisyan.com"
-  },
   "keywords": [
     "eleventy",
     "11ty",
