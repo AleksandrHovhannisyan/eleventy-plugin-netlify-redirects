@@ -1,7 +1,7 @@
 # eleventy-plugin-netlify-redirects
 
 > [!NOTE]
-> This plugin is only compatible with Eleventy versions `>= 3.0.0-alpha.6`.
+> This plugin is experimental and is only compatible with Eleventy versions `>= 3.0.0-alpha.6`.
 
 Automatically generate a [Netlify `_redirects` file](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) for your Eleventy site using front matter.
 
