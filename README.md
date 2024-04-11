@@ -61,7 +61,7 @@ For example, if the above redirects are specified in a post with a current perma
 
 Netlify will detect this file after Eleventy builds your site.
 
-See the [example folder](./example/.eleventy.js) or run `pnpm run test` for more examples.
+See the [example folder](./example/.eleventy.js) or run `pnpm run serve` for more examples.
 
 ## API
 
