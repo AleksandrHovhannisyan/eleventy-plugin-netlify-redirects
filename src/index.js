@@ -18,6 +18,11 @@ const getRedirects = () => fs.readFileSync(path.resolve(__dirname, "redirects.li
  * @param {EleventyPluginNetlifyRedirectsOptions} options
  */
 module.exports = (eleventyConfig, options) => {
+    // https://www.11ty.dev/docs/plugins/#feature-testing
+    if(!('addTemplate' in eleventyConfig)) {
+        console.log(`[eleventy-plugin-netlify-redirects] WARN Eleventy plugin compatibility: Virtual Templates are required for this plugin, please use Eleventy v3.0 or newer.`);
+    }
+
     const { staticRedirects, frontMatterOverrides } = options;
 
     const frontMatter = {
