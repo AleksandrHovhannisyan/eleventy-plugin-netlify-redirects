@@ -30,6 +30,8 @@ module.exports = (eleventyConfig, options) => {
     permalink: '/_redirects',
     // https://www.11ty.dev/docs/collections/#how-to-exclude-content-from-collections
     eleventyExcludeFromCollections: true,
+    // Don't render with any layout
+    layout: null,
     // Forward static redirects and other front matter overrides to the template
     staticRedirects,
     ...frontMatterOverrides
